@@ -14,6 +14,11 @@ option=${option:-4}
 
 echo
 
+re='^[0-9]+$'
+if ! [[ $option =~ $re ]] ; then
+   echo "Input was not a number, please try again." >&2; echo; exit 1
+fi
+
 if [ $option -eq 1 ]
 then
    echo "Now connecting to VirMach 107.173.51.44 - 512MB/15GB/1TB"
